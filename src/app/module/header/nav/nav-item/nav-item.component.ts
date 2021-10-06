@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Item } from './model/item';
 
 @Component({
   selector: 'Nav-item',
@@ -8,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NavItemComponent implements OnInit {
 
   @Input()
-  public label:string = "";
+  public item:Item = {label: "", isLogo: false};
 
   private number:number = 0;
 
