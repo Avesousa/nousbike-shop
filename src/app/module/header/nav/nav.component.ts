@@ -12,7 +12,7 @@ export class NavComponent implements OnInit {
     {label: "hola", isLogo:false},
     {label: "como", isLogo:false},
     {label: "logo", image:"src/asssets/verdura.jpg", isLogo:true},
-    {label: "estas", isLogo:false},
+    {label: "avelino", isLogo:false},
     {label: "?", isLogo:false}
   ];
 
