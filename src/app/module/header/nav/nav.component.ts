@@ -9,11 +9,11 @@ import { Item } from './nav-item/model/item';
 export class NavComponent implements OnInit {
 
   public menuArray: Item[] = [
-    {label: "hola", isLogo:false},
-    {label: "como", isLogo:false},
-    {label: "logo", image:"src/asssets/verdura.jpg", isLogo:true},
-    {label: "estas", isLogo:false},
-    {label: "?", isLogo:false}
+    {label: "inicio", link: "/"},
+    {label: "productos", link: "/product"},
+    {label: "logo", link: "/",image:"/assets/brand/logo.jpg", },
+    {label: "ordenes", link: "/order"},
+    {label: "carrito", link: "/checkout"}
   ];
 
   constructor() { }

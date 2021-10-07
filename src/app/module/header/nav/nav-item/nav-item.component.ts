@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Item } from './model/item';
 
 @Component({
@@ -9,19 +10,50 @@ import { Item } from './model/item';
 export class NavItemComponent implements OnInit {
 
   @Input()
-  public item:Item = {label: "", isLogo: false};
+  public item:Item = {label: "", link: ""};
 
   private number:number = 0;
 
-  constructor() { }
+  public classDefined:string = "";
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    let hola = "verdura";
-    this.saludar(hola);
+    this.definedClass();
   }
 
-  saludar(hola: string){
-    console.log(`Estoy saludando con el numero ${this.number} - ${hola}`);
+  definedClass(){
+    //Formato uno
+    // this.classDefined = this.item.label == "inicio" ? "inicio" :
+    //     (this.item.label == "productos" ? "productos" : "default");
+
+    //Forma dos
+    // if(this.item.label == "inicio"){
+    //   this.classDefined = "inicio";
+    // }else if(this.item.label == "productos"){
+    //   this.classDefined = "productos";
+    // }else{
+    //   this.classDefined = "default";
+    // }
+
+    //forma tres
+    switch(this.item.label){
+      case "inicio":
+        this.classDefined = "inicio";
+        break;
+      case "productos":
+        this.classDefined = "productos";
+        break;
+      default:
+        this.classDefined = "default";
+        break;
+    }
+
+  }
+
+  toGo(){
+    console.log("Haciendo click");
+    this.router.navigateByUrl(this.item.link);
   }
 
 }
