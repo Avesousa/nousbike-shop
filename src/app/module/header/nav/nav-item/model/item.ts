@@ -1,7 +1,7 @@
 export interface Item{
 
-  image?:string;
+  image?:string | number | any;
   label:string;
-  isLogo:boolean;
+  link:string;
 
 }

@@ -1,7 +1,7 @@
-<div *ngIf="item.isLogo">
-  <img [src]="item.image" alt="{{item.label}}">
+<div *ngIf="item.image" (click)="toGo()">
+    <img [src]="item.image" [alt]="item.label" width="150">
 </div>
 
-<div *ngIf="!item.isLogo">
-  <p>{{item.label}}</p>
+<div *ngIf="!item.image" (click)="toGo()">
+    <p [ngClass]="classDefined">{{item.label}}</p>
 </div>
