@@ -1,7 +1,7 @@
+import { HeaderModule } from './module/header/header.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import { MainRoutes } from './routes/routing';
 
 import { AppComponent } from './app.component';
 
@@ -18,11 +18,11 @@ import { OrderListModule } from './routes/order-list/order-list.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MainRoutes,
     CheckoutModule,
     MainModule,
     ProductListModule,
-    OrderListModule
+    OrderListModule,
+    HeaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

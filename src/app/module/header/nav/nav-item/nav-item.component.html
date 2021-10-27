@@ -1,2 +1,9 @@
 <p *ngIf="isError">Ha ocurrido un error asi que no te muestro nada</p>
 <div class="menu" *ngIf="!isError"></div>
+<div *ngIf="item.isLogo">
+  <img [src]="item.image" alt="{{item.label}}">
+</div>
+
+<div *ngIf="!item.isLogo">
+  <p>{{item.label}}</p>
+</div>
